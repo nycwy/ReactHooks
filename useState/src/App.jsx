@@ -1,20 +1,12 @@
 import { useState } from "react"
 
 export default function App() {
-  const [counter, setCounter] = useState(0);
-
-  function handleIncrement() {
-    setCounter(counter => counter + 1);
-  }
-  function handleDecrement() {
-    setCounter(counter => counter - 1);
-  }
+  const [text, setText] = useState('');
   
   return (
     <>
-      <h2>{counter}</h2>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
+      <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Enter your text" />
+      <h1>{text}</h1>
     </>
   )
 }
